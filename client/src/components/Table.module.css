@@ -1,0 +1,28 @@
+/* Table.module.css */
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Adjust the height to fit your layout */
+}
+
+.table {
+  width: 90%; /* Adjust the width as needed */
+  margin: 2rem auto; /* Centers the table with a margin on the top and bottom */
+}
+
+.thead {
+  display: table;
+  width: 100%; /* Full width of the table */
+}
+
+.tbody {
+  display: block;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.table thead, .table tbody tr {
+  display: table;
+  width: 100%;
+}
