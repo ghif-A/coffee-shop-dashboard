@@ -39,6 +39,18 @@ const getDailySpoilageByProduct = (req, res) => {
   );
 };
 
+const getSalesByProductCategory = (req, res) => {
+  pool.query(
+    'SELECT p.product_category, SUM(sr.line_item_amount) AS sales FROM sales_receipts sr JOIN product p ON sr.product_id = p.product_id GROUP BY p.product_category ORDER BY sales DESC',
+    (error, dailyspoilage) => {
+      if (error) {
+        throw error;
+      }
+      res.status(200).json(dailyspoilage.rows);
+    }
+  );
+};
+
 /*
 app.get("/", (req, res) => {
     res.send("Hello World!");
@@ -51,6 +63,7 @@ app.get('/dailysales', getDailySalesByStore)
 
 app.get('/dailyspoilage', getDailySpoilageByProduct)
 
+app.get('/productcategorysales', getSalesByProductCategory)
 
 app.listen(PORT, () => {
     console.log(`Server listening on the port  ${PORT}`);

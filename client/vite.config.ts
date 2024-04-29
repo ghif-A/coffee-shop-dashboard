@@ -8,7 +8,8 @@ export default defineConfig({
     proxy: {
       '/products': 'http://localhost:9000',
       '/dailysales': 'http://localhost:9000',
-      '/dailyspoilage': 'http://localhost:9000'
+      '/dailyspoilage': 'http://localhost:9000',
+      '/productcategorysales': 'http://localhost:9000',
     }
   }
 })

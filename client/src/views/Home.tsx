@@ -2,7 +2,7 @@ import React from "react";
 import BarChart from "../components/BarChart";
 import LineChart from "../components/LineChart";
 // import DiskUsageChart from "../components/DiskUsageChart";
-import DiskUsageTreeMap from "../components/DiskUsageTreeMap";
+import TreeMap from "../components/TreeMap";
 import { useTheme } from "../contexts/ThemeContext";
 
 const Home: React.FC = () => {
@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <BarChart />
       <LineChart />
       {/* <DiskUsageChart /> */}
-      <DiskUsageTreeMap />
+      <TreeMap />
     </div>
   );
 };

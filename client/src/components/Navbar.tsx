@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/coffee.png';
-import { useTheme } from '../contexts/ThemeContext'; // Import useTheme hook
+import { useTheme } from '../contexts/ThemeContext';
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useTheme(); // Destructure theme and toggleTheme from the context
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: '#be9b7b' }}>
@@ -27,10 +27,9 @@ const Navbar = () => {
                 Tables
               </NavLink>
             </li>
-            {/* Theme toggle list item */}
             <li className="nav-item">
               <span className="nav-link" style={{ cursor: 'pointer', color: '#4b3832' }} onClick={toggleTheme}>
-                {theme === 'light' ? 'Dark Mode : OFF' : 'Dark Mode : ON'}
+                {theme === 'light' ? '🌙' : '🔆'}
               </span>
             </li>
           </ul>

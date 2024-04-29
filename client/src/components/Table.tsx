@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from './Table.module.css';
+import styles from "./Table.module.css";
 import { useTheme } from "../contexts/ThemeContext";
 
 interface Product {
@@ -31,7 +31,7 @@ const Table: React.FC = () => {
         if (Array.isArray(response.data)) {
           setData(response.data);
         } else {
-          console.error('The response is not an array:', response.data);
+          console.error("The response is not an array:", response.data);
         }
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -48,46 +48,46 @@ const Table: React.FC = () => {
   }
 
   return (
-      <div className={`${styles.tableContainer} ${theme === 'light' ? '' : 'dark'}`}>
+    <div className={`${styles.tableContainer} ${theme === 'dark' ? styles.dark : ''}`}>
       <div className={styles.tableWrapper}>
         <table className={`table table-striped ${styles.table}`}>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Group</th>
-                <th>Category</th>
-                <th>Type</th>
-                <th>Product</th>
-                <th>Description</th>
-                <th>Unit of Measure</th>
-                <th>Wholesale Price</th>
-                <th>Retail Price</th>
-                <th>Tax Exempt</th>
-                <th>Promo</th>
-                <th>New Product</th>
+          <thead className={styles.stickyHeader}>
+            <tr>
+              <th className={styles.stickyHeaderFirstCell}>ID</th>
+              <th>Group</th>
+              <th>Category</th>
+              <th>Type</th>
+              <th>Product</th>
+              <th>Description</th>
+              <th>Unit of Measure</th>
+              <th>Wholesale Price</th>
+              <th>Retail Price</th>
+              <th>Tax Exempt</th>
+              <th>Promo</th>
+              <th>New Product</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.product_id}>
+                <td className={styles.stickyColumn}>{item.product_id}</td>
+                <td>{item.product_group}</td>
+                <td>{item.product_category}</td>
+                <td>{item.product_type}</td>
+                <td>{item.product}</td>
+                <td>{item.product_description}</td>
+                <td>{item.unit_of_measure}</td>
+                <td>{item.current_wholesale_price.toFixed(2)}</td>
+                <td>{item.current_retail_price.toFixed(2)}</td>
+                <td>{item.tax_exempt_yn ? "Yes" : "No"}</td>
+                <td>{item.promo_yn ? "Yes" : "No"}</td>
+                <td>{item.new_product_yn ? "Yes" : "No"}</td>
               </tr>
-            </thead>
-            <tbody>
-              {data.map((item) => (
-                <tr key={item.product_id}>
-                  <td>{item.product_id}</td>
-                  <td>{item.product_group}</td>
-                  <td>{item.product_category}</td>
-                  <td>{item.product_type}</td>
-                  <td>{item.product}</td>
-                  <td>{item.product_description}</td>
-                  <td>{item.unit_of_measure}</td>
-                  <td>{item.current_wholesale_price.toFixed(2)}</td>
-                  <td>{item.current_retail_price.toFixed(2)}</td>
-                  <td>{item.tax_exempt_yn ? "Yes" : "No"}</td>
-                  <td>{item.promo_yn ? "Yes" : "No"}</td>
-                  <td>{item.new_product_yn ? "Yes" : "No"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
+    </div>
   );
 };
 

@@ -1,28 +1,107 @@
-/* Table.module.css */
 .tableContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Adjust the height to fit your layout */
+  overflow-x: auto;
+}
+
+.tableWrapper {
+  width: 100%;
+  max-width: 100vw;
+  overflow-y: auto;
+  max-height: 400px;
 }
 
 .table {
-  width: 90%; /* Adjust the width as needed */
-  margin: 2rem auto; /* Centers the table with a margin on the top and bottom */
+  min-width: 1500px;
+  width: auto;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
-.thead {
-  display: table;
-  width: 100%; /* Full width of the table */
+.table th,
+.table td {
+  border: 1px solid #ddd;
 }
 
-.tbody {
-  display: block;
-  overflow-y: auto;
-  width: 100%;
+.table th:first-child,
+.table td:first-child {
+  width: 50px;
 }
 
-.table thead, .table tbody tr {
-  display: table;
-  width: 100%;
+.stickyHeader th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+}
+
+.stickyColumn {
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 10;
+  border-right: 1px solid #ddd;
+}
+
+.stickyHeader th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.stickyHeaderFirstCell {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 20;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark .table {
+  border-color: #777;
+}
+
+.dark .table th,
+.dark .table td {
+  border-color: #777;
+}
+
+.dark .stickyHeader th {
+  background: #333;
+  color: #fff;
+}
+
+.dark .stickyColumn {
+  background: #333;
+  color: #fff;
+}
+
+.dark .stickyHeaderFirstCell {
+  background: #333;
+  color: #fff;
+}
+
+.tableContainer.dark .table th,
+.tableContainer.dark .table td {
+  border-color: #777;
+  background-color: #333;
+  color: #fff;
+}
+
+.tableContainer.dark .stickyHeader th,
+.tableContainer.dark .stickyColumn,
+.tableContainer.dark .stickyHeaderFirstCell {
+  background: #333;
+  color: #fff;
+  border-color: #777;
 }

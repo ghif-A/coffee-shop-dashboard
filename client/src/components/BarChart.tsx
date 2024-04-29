@@ -3,7 +3,6 @@ import ReactEcharts from "echarts-for-react";
 import { useTheme } from "../contexts/ThemeContext";
 import axios from "axios";
 
-// Define an interface for the API data
 interface SaleData {
   store_address: string;
   transaction_date: string;
@@ -12,7 +11,6 @@ interface SaleData {
 
 const BarChart: React.FC = () => {
   const { theme } = useTheme();
-  // Use the SaleData interface to type the salesData state
   const [salesData, setSalesData] = useState<SaleData[]>([]);
 
   useEffect(() => {
@@ -29,9 +27,6 @@ const BarChart: React.FC = () => {
   }, []);
 
   const getOption = () => {
-    // Process the data to get the xAxis data and series data
-    //const xAxisData = salesData.map((item) => item.transaction_date);
-    //console.log(xAxisData)
     const xAxisData = [...new Set(salesData.map((item) => item.transaction_date))];
     const uniqueStoreAddresses = [...new Set(salesData.map((item) => item.store_address))];
     const seriesData = uniqueStoreAddresses.map((storeAddress) => {
@@ -62,6 +57,7 @@ const BarChart: React.FC = () => {
         textStyle: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
+        type: 'scroll',
         orient: 'horizontal',
         bottom: 0,
       },
@@ -71,12 +67,14 @@ const BarChart: React.FC = () => {
         axisLabel: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
+        name: "Date",
       },
       yAxis: {
         type: "value",
         axisLabel: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
+        name: "Sales ($)",
       },
       series: seriesData,
     };

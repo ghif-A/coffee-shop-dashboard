@@ -1,11 +1,9 @@
 .light {
-  /* Light theme styles */
   background-color: #ffffff;
   color: #000000;
 }
 
 .dark {
-  /* Dark theme styles */
   background-color: #000000;
   color: #ffffff;
 }
@@ -27,6 +25,32 @@
   cursor: pointer;
 }
 
-h1 {
-  font-family: 'Arial', sans-serif;
+body {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #6f4e37;
+}
+
+.special-text {
+  font-family: 'Dancing Script', cursive;
+}
+
+p, li, a, span, div {
+  color: #3e2723;
+  font-family: 'Lato', sans-serif;
+}
+
+button, input, select, textarea {
+  font-family: 'Lato', sans-serif;
+  background-color: #be9b7b;
+  color: #fff;
+  border: none;
+}
+
+a:hover {
+  color: #d7ccc8;
+  text-decoration: underline;
 }

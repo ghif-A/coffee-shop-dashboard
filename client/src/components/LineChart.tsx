@@ -1,4 +1,3 @@
-// LineChart.tsx
 import React, { useEffect, useState } from "react";
 import ReactEcharts from "echarts-for-react";
 import { useTheme } from "../contexts/ThemeContext";
@@ -86,6 +85,7 @@ const LineChart: React.FC = () => {
         textStyle: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
+        type: 'scroll',
         orient: 'horizontal',
         bottom: 0,
       },
@@ -95,12 +95,14 @@ const LineChart: React.FC = () => {
         axisLabel: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
+        name: "Date",
       },
       yAxis: {
         type: "value",
         axisLabel: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
+        name: "Spoilage (item)",
       },
       series: processDataForEcharts(data),
     };
