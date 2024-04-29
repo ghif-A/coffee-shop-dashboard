@@ -1,18 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-.card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-}
-.card > * {
-  min-width: 320px;
-  max-width: 640px;
-  margin: 1px;
-  flex: 1 1 auto;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
