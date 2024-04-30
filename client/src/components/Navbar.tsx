@@ -29,7 +29,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <span className="nav-link" style={{ cursor: 'pointer', color: '#4b3832' }} onClick={toggleTheme}>
-                {theme === 'light' ? '⚫' : '⚪'}
+                {theme === 'light' ? '⚪' : '⚫'}
               </span>
             </li>
           </ul>
