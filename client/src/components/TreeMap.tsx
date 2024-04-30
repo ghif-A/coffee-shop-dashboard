@@ -16,10 +16,9 @@ const TreeMap: React.FC = () => {
   >([]);
 
   useEffect(() => {
-    var baseURL = new String(import.meta.env.VITE_API_ENDPOINT)
-    var endpoint = new String("/productcategorysales")
+    const baseURL = new String(import.meta.env.VITE_API_ENDPOINT);
     axios
-      .get(baseURL.concat(endpoint.toString()))
+      .get(`${baseURL}/productcategorysales`)
       .then((response) => {
         if (Array.isArray(response.data)) {
           setProductCategorySalesData(response.data);
@@ -79,6 +78,7 @@ const TreeMap: React.FC = () => {
             name: item.product_category,
             value: item.sales,
           })),
+          roam: false,
         },
       ],
       color:

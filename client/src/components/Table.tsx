@@ -27,9 +27,8 @@ const Table: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        var baseURL = new String(import.meta.env.VITE_API_ENDPOINT);
-        var endpoint = new String("/products");
-        const response = await axios.get(baseURL.concat(endpoint.toString()));
+        const baseURL = new String(import.meta.env.VITE_API_ENDPOINT);
+        const response = await axios.get(`${baseURL}/products`);
         if (Array.isArray(response.data)) {
           setData(response.data);
         } else {

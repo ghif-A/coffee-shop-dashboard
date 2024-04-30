@@ -16,9 +16,8 @@ const BarChart: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        var baseURL = new String(import.meta.env.VITE_API_ENDPOINT);
-        var endpoint = new String("/dailysales");
-        const response = await axios.get(baseURL.concat(endpoint.toString()));
+        const baseURL = new String(import.meta.env.VITE_API_ENDPOINT);
+        const response = await axios.get(`${baseURL}/dailysales`);
         setSalesData(response.data as SaleData[]);
       } catch (error) {
         console.error("Error fetching data: ", error);
