@@ -18,6 +18,86 @@ const getProducts =  (req, res) => {
   })
 }
 
+const getSalesOutlets =  (req, res) => {
+  pool.query('SELECT * FROM sales_outlet', 
+    (error, values) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(values.rows)
+  })
+}
+
+const getSalesReceipts =  (req, res) => {
+  pool.query('SELECT * FROM sales_receipts LIMIT 100', 
+    (error, values) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(values.rows)
+  })
+}
+
+const getSalesTargets =  (req, res) => {
+  pool.query('SELECT * FROM sales_targets', 
+    (error, values) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(values.rows)
+  })
+}
+
+const getPastryInventory =  (req, res) => {
+  pool.query('SELECT * FROM pastry_inventory', 
+    (error, values) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(values.rows)
+  })
+}
+
+const getStaff =  (req, res) => {
+  pool.query('SELECT * FROM staff', 
+    (error, values) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(values.rows)
+  })
+}
+
+const getCustomers =  (req, res) => {
+  pool.query('SELECT * FROM customer', 
+    (error, values) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(values.rows)
+  })
+}
+
+const getGenerations =  (req, res) => {
+  pool.query('SELECT * FROM generations', 
+    (error, values) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(values.rows)
+  })
+}
+
+const getDates =  (req, res) => {
+  pool.query('SELECT * FROM dates', 
+    (error, values) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(values.rows)
+  })
+}
+
 const getDailySalesByStore = (req, res) => {
   pool.query(
     'SELECT so.store_address, TO_CHAR(sr.transaction_date, \'YYYY-MM-DD\') AS transaction_date, SUM(sr.line_item_amount) AS total_sales FROM sales_outlet so JOIN sales_receipts sr ON so.sales_outlet_id = sr.sales_outlet_id GROUP BY so.store_address, TO_CHAR(sr.transaction_date, \'YYYY-MM-DD\') ORDER BY TO_CHAR(sr.transaction_date, \'YYYY-MM-DD\'), so.store_address',
@@ -103,6 +183,22 @@ const getTotalSpoilageLoss = (req, res) => {
 };
 
 app.get('/products', getProducts)
+
+app.get('/salesoutlets', getSalesOutlets)
+
+app.get('/salesreceipts', getSalesReceipts)
+
+app.get('/salestargets', getSalesTargets)
+
+app.get('/pastryinventory', getPastryInventory)
+
+app.get('/staff', getStaff)
+
+app.get('/customers', getCustomers)
+
+app.get('/generations', getGenerations)
+
+app.get('/dates', getDates)
 
 app.get('/dailysales', getDailySalesByStore)
 
