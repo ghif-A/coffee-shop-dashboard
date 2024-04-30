@@ -19,7 +19,9 @@ const LineChart: React.FC = () => {
   const [data, setData] = useState<DailySpoilageData[]>([]);
 
   useEffect(() => {
-    axios.get("https://coffee-shop-dashboard-backend.onrender.com/dailyspoilage")
+    var baseURL = new String(import.meta.env.VITE_API_ENDPOINT);
+    var endpoint = new String("/dailyspoilage");
+    axios.get(baseURL.concat(endpoint.toString()))
       .then((response) => {
         if (Array.isArray(response.data)) {
           setData(response.data.map(item => ({

@@ -16,8 +16,10 @@ const TreeMap: React.FC = () => {
   >([]);
 
   useEffect(() => {
+    var baseURL = new String(import.meta.env.VITE_API_ENDPOINT)
+    var endpoint = new String("/productcategorysales")
     axios
-      .get("https://coffee-shop-dashboard-backend.onrender.com/productcategorysales")
+      .get(baseURL.concat(endpoint.toString()))
       .then((response) => {
         if (Array.isArray(response.data)) {
           setProductCategorySalesData(response.data);
