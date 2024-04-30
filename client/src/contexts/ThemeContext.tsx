@@ -14,10 +14,18 @@ interface Props {
 }
 
 export const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  );
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => setTheme(mediaQuery.matches ? 'dark' : 'light');
+    mediaQuery.addListener(handleChange);
+
     document.body.className = theme;
+
+    return () => mediaQuery.removeListener(handleChange);
   }, [theme]);
 
   const toggleTheme = () => {
