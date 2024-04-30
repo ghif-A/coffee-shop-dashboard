@@ -21,6 +21,20 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div style={{ textAlign: 'center' }}>
+          <a
+            href="https://github.com/ghif-A/coffee-shop-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#d3d3d3" }}
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1024px-GitHub_Invertocat_Logo.svg.png"
+              alt="GitHub"
+              style={{ width: "24px", height: "24px", verticalAlign: 'middle' }}
+            />
+          </a>
+        </div>
       </section>
       <div
         className="text-center p-4"
@@ -37,20 +51,6 @@ const Footer = () => {
           CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
         </a>
         . No copyright or related rights are claimed.
-        <div style={{ textAlign: 'center', marginTop: '15px' }}>
-          <a
-            href="https://github.com/ghif-A/coffee-shop-dashboard"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#d3d3d3" }}
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1024px-GitHub_Invertocat_Logo.svg.png"
-              alt="GitHub"
-              style={{ width: "24px", height: "24px", verticalAlign: 'middle' }}
-            />
-          </a>
-        </div>
       </div>
     </footer>
   );
