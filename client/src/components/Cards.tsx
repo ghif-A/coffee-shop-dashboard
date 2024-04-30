@@ -39,7 +39,7 @@ const Cards: React.FC = () => {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     alignItems: 'center',
-    padding: '10px',
+    padding: '15px',
     backgroundColor: theme === 'dark' ? '#151515' : '#ffffff',
   };
 
