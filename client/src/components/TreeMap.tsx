@@ -17,7 +17,7 @@ const TreeMap: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("/productcategorysales")
+      .get("https://coffee-shop-dashboard-backend.onrender.com/productcategorysales")
       .then((response) => {
         if (Array.isArray(response.data)) {
           setProductCategorySalesData(response.data);

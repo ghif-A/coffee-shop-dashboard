@@ -27,7 +27,7 @@ const Table: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/products");
+        const response = await axios.get("https://coffee-shop-dashboard-backend.onrender.com/products");
         if (Array.isArray(response.data)) {
           setData(response.data);
         } else {
