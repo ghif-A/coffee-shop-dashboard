@@ -5,11 +5,16 @@ import { useTheme } from '../contexts/ThemeContext';
 import { CSSProperties } from 'react';
 
 const Cards: React.FC = () => {
-  const [totalSales, setTotalSales] = useState('');
-  const [salesVsTarget, setSalesVsTarget] = useState('');
-  const [orderCount, setOrderCount] = useState('');
-  const [spoilageLoss, setSpoilageLoss] = useState('');
+  const [totalSales, setTotalSales] = useState(0);
+  const [salesVsTarget, setSalesVsTarget] = useState(0);
+  const [orderCount, setOrderCount] = useState(0);
+  const [spoilageLoss, setSpoilageLoss] = useState(0);  
+  
   const { theme } = useTheme();
+
+  const formatValue = (value: number) => {
+    return value >= 0 ? `+$${value}K` : `-$${Math.abs(value)}K`;
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,10 +26,10 @@ const Cards: React.FC = () => {
           Axios.get(`${baseURL}/itemssold`),
           Axios.get(`${baseURL}/totalspoilageloss`),
         ]);
-        setTotalSales(Math.round(responses[0].data[0].sum_total_sales / 1000).toString() + 'K');
-        setSalesVsTarget(Math.round(responses[1].data[0].sales_targets_difference / 1000).toString() + 'K');
-        setOrderCount(Math.round(responses[2].data[0].items_sold / 1000).toString() + 'K');
-        setSpoilageLoss(Math.round(responses[3].data[0].total_spoilage_loss / 1000).toString() + 'K');
+        setTotalSales(Math.round(responses[0].data[0].sum_total_sales / 1000));
+        setSalesVsTarget(Math.round(responses[1].data[0].sales_targets_difference / 1000));
+        setOrderCount(Math.round(responses[2].data[0].items_sold / 1000));
+        setSpoilageLoss(Math.round(responses[3].data[0].total_spoilage_loss / 1000));
 
       } catch (error) {
         console.error('Error fetching data: ', error);
@@ -45,10 +50,10 @@ const Cards: React.FC = () => {
 
   return (
     <div style={cardContainerStyle}>
-      <Card value={`+$${totalSales}`} description="Total Sales" />
-      <Card value={`+$${salesVsTarget}`} description="Sales vs Target" />
-      <Card value={`${orderCount}`} description="Items Sold" />
-      <Card value={`-$${spoilageLoss}`} description="Spoilage Loss" />
+      <Card value={formatValue(totalSales)} description="Total Sales" />
+      <Card value={formatValue(salesVsTarget)} description="Sales vs Target" />
+      <Card value={`${orderCount.toString()}K`} description="Items Sold" />
+      <Card value={`-$${spoilageLoss}K`} description="Spoilage Loss" />
     </div>
   );
 };
