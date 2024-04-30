@@ -1,4 +1,3 @@
-import 'dotenv/config'
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
