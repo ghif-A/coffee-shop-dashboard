@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/coffee.png';
+import logo from '../assets/images/coffee.png';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Navbar = () => {
