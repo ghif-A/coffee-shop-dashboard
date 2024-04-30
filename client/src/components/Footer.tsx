@@ -40,8 +40,8 @@ const Footer = () => {
         className="text-center p-4"
         style={{ backgroundColor: "#6f4e37", color: "#d3d3d3" }}
       >
-        Copyleft {currentYear} Coffee Shop Analytics Dashboard. This work is
-        provided under the{" "}
+        Copyright © {currentYear} Coffee Shop Analytics Dashboard. This work is
+        dedicated to the{" "}
         <a
           href="https://creativecommons.org/publicdomain/zero/1.0/"
           target="_blank"
