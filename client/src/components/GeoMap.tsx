@@ -38,8 +38,8 @@ const GeoMap: React.FC = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '15px', fontWeight: 'bold' }}>Our Outlets in New York, US</h4>
-      <MapContainer center={[40.7328, -73.95]} zoom={10.3} style={{ height: '40vh', width: '80%', margin: '30px', marginTop: '0' }}>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '15px', fontWeight: 'bold' }}>Our Outlets in New York, US</h5>
+      <MapContainer center={[40.7328, -73.95]} zoom={10.3} style={{ height: '40vh', width: '80%', margin: '30px', marginTop: '10px' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

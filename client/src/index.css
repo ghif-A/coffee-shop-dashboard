@@ -1,36 +1,10 @@
-.light {
-  background-color: #ffffff;
-  color: #151515;
-}
-
-.dark {
-  background-color: #151515;
-  color: #ffffff;
-}
-
-body {
-  font-family: 'Cormorant Garamond', serif;
-}
-
+/* Index.css */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
   color: #6f4e37;
-}
-
-.special-text {
-  font-family: 'Dancing Script', cursive;
 }
 
 p, li, a, span, div {
   color: #3e2723;
-  font-family: 'Lato', sans-serif;
-}
-
-button, input, select, textarea {
-  font-family: 'Lato', sans-serif;
-  background-color: #be9b7b;
-  color: #fff;
-  border: none;
 }
 
 a:hover {

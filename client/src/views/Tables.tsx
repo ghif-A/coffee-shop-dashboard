@@ -13,23 +13,23 @@ const Tables = () => {
   const { theme } = useTheme();
   return (
     <div className={theme} style={{ padding: '15px', margin: '15px' }}>
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold' }}>Products</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold' }}>Products</h5>
       <TableProduct />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Sales Outlets</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Sales Outlets</h5>
       <TableSalesOutlet />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Sales Targets</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Sales Targets</h5>
       <TableSalesTargets />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Pastry Inventory</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Pastry Inventory</h5>
       <TablePastryInventory />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Staff</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Staff</h5>
       <TableStaff />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Customers</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Customers</h5>
       <TableCustomer />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Sales Receipts</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Sales Receipts</h5>
       <TableReceipts />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Generations</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Generations</h5>
       <TableGenerations />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Dates</h4>
+      <h5 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '15px' }}>Dates</h5>
       <TableDates />
       <h6 style={{ color: theme === 'dark' ? 'white' : 'black', fontWeight: 'bold', marginTop: '20px' }}>*All tables are limited to 100 rows due to backend limitation.</h6>
     </div>

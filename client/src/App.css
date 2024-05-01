@@ -1,4 +1,22 @@
+/* App.css */
 html, body {
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+}
+
+.light {
+  background-color: #ffffff;
+  color: #151515;
+}
+
+.dark {
+  background-color: #151515;
+  color: #ffffff;
+}
+
+button, input, select, textarea {
+  background-color: #be9b7b;
+  color: #fff;
+  border: none;
 }
