@@ -4,6 +4,7 @@ import LineChart from "../components/LineChart";
 import TreeMap from "../components/TreeMap";
 import { useTheme } from "../contexts/ThemeContext";
 import Cards from "../components/Cards";
+import GeoMap from "../components/GeoMap";
 
 const Home: React.FC = () => {
   const { theme } = useTheme();
@@ -13,6 +14,7 @@ const Home: React.FC = () => {
       <BarChart />
       <LineChart />
       <TreeMap />
+      <GeoMap />
     </div>
   );
 };
