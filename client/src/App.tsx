@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
+  Navigate
 } from "react-router-dom";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import MainLayout from "./layout/MainLayout";
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<Home />} />
       <Route path="/tables" element={<Tables />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Route>
   )
 );
