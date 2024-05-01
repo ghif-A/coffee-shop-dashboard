@@ -19,7 +19,7 @@ interface Product {
   new_product_yn: boolean;
 }
 
-const Table: React.FC = () => {
+const ProductTable: React.FC = () => {
   const { theme } = useTheme();
   const [data, setData] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -92,4 +92,4 @@ const Table: React.FC = () => {
   );
 };
 
-export default Table;
+export default ProductTable;

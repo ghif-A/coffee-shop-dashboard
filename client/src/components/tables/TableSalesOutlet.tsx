@@ -19,7 +19,7 @@ interface SalesOutlet {
   neighborhood: string;
 }
 
-const Table: React.FC = () => {
+const SalesOutletTable: React.FC = () => {
   const { theme } = useTheme();
   const [data, setData] = useState<SalesOutlet[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -92,4 +92,4 @@ const Table: React.FC = () => {
   );
 };
 
-export default Table;
+export default SalesOutletTable;

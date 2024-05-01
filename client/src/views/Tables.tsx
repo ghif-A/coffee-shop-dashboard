@@ -25,13 +25,13 @@ const Tables = () => {
       <TableStaff />
       <h4 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '15px' }}>Customers</h4>
       <TableCustomer />
-      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '15px' }}>Sales Receipts*</h4>
+      <h4 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '15px' }}>Sales Receipts</h4>
       <TableReceipts />
-      <h6 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '5px' }}>*Data are limited due to backend limitation</h6>
       <h4 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '15px' }}>Generations</h4>
       <TableGenerations />
       <h4 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '15px' }}>Dates</h4>
       <TableDates />
+      <h6 style={{ color: theme === 'dark' ? 'white' : 'black', marginTop: '20px' }}>*All tables are limited to 100 rows due to backend limitation.</h6>
     </div>
   );
 };

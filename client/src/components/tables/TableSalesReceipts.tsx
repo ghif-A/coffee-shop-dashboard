@@ -21,7 +21,7 @@ interface SalesReceipt {
   promo_item_yn: boolean;
 }
 
-const Table: React.FC = () => {
+const SalesReceiptsTable: React.FC = () => {
   const { theme } = useTheme();
   const [data, setData] = useState<SalesReceipt[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -73,8 +73,8 @@ const Table: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
-              <tr key={item.transaction_id}>
+            {data.map((item, index) => (
+              <tr key={index}>
                 <td className={styles.stickyColumn}>{item.transaction_id}</td>
                 <td>{item.transaction_date}</td>
                 <td>{item.transaction_time}</td>
@@ -98,4 +98,4 @@ const Table: React.FC = () => {
   );
 };
 
-export default Table;
+export default SalesReceiptsTable;
