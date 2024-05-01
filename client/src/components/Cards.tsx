@@ -50,7 +50,7 @@ const Cards: React.FC = () => {
 
   return (
     <div style={cardContainerStyle}>
-      <Card value={formatValue(totalSales)} description="Total Sales" />
+      <Card value={`+$${totalSales}K`} description="Total Sales" />
       <Card value={formatValue(salesVsTarget)} description="Sales vs Target" />
       <Card value={`${orderCount.toString()}K`} description="Items Sold" />
       <Card value={`-$${spoilageLoss}K`} description="Spoilage Loss" />
