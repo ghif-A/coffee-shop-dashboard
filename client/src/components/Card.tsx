@@ -19,6 +19,11 @@ const Card: React.FC<CardProps> = ({ value, description }) => {
     flexBasis: 'calc(50% - 20px)',
     maxWidth: '250px',
     boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%',
   };
 
   const valueStyle: CSSProperties = {
