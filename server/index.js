@@ -214,6 +214,28 @@ app.get('/itemssold', getItemsSold)
 
 app.get('/totalspoilageloss', getTotalSpoilageLoss)
 
+function formatUptime(uptime) {
+  const days = Math.floor(uptime / 86400);
+  const hours = Math.floor((uptime % 86400) / 3600);
+  const minutes = Math.floor((uptime % 3600) / 60);
+  const seconds = Math.floor(uptime % 60);
+  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+app.get('/healthcheck', (req, res) => {
+  const healthcheck = {
+    uptime: formatUptime(process.uptime()),
+    message: 'OK',
+    timestamp: new Date().toLocaleString()
+  };
+  try {
+    res.send(healthcheck);
+  } catch (e) {
+    healthcheck.message = e;
+    res.status(503).send();
+  }
+});
+
 app.listen(PORT, () => {
     console.log(`Server listening on the port  ${PORT}`);
 })
