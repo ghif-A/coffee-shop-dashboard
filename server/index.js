@@ -9,7 +9,7 @@ app.use(cors());
 const PORT = process.env.PORT || 9000;
 
 const getProducts =  (req, res) => {
-  pool.query('SELECT * FROM product', 
+  pool.query('SELECT * FROM product LIMIT 100', 
     (error, values) => {
     if (error) {
       throw error
@@ -19,7 +19,7 @@ const getProducts =  (req, res) => {
 }
 
 const getSalesOutlets =  (req, res) => {
-  pool.query('SELECT * FROM sales_outlet', 
+  pool.query('SELECT * FROM sales_outlet LIMIT 100', 
     (error, values) => {
     if (error) {
       throw error
@@ -39,7 +39,7 @@ const getSalesReceipts =  (req, res) => {
 }
 
 const getSalesTargets =  (req, res) => {
-  pool.query('SELECT * FROM sales_targets', 
+  pool.query('SELECT * FROM sales_targets LIMIT 100', 
     (error, values) => {
     if (error) {
       throw error
@@ -49,7 +49,7 @@ const getSalesTargets =  (req, res) => {
 }
 
 const getPastryInventory =  (req, res) => {
-  pool.query('SELECT * FROM pastry_inventory', 
+  pool.query('SELECT * FROM pastry_inventory LIMIT 100', 
     (error, values) => {
     if (error) {
       throw error
@@ -59,7 +59,7 @@ const getPastryInventory =  (req, res) => {
 }
 
 const getStaff =  (req, res) => {
-  pool.query('SELECT * FROM staff', 
+  pool.query('SELECT * FROM staff LIMIT 100', 
     (error, values) => {
     if (error) {
       throw error
@@ -69,7 +69,7 @@ const getStaff =  (req, res) => {
 }
 
 const getCustomers =  (req, res) => {
-  pool.query('SELECT * FROM customer', 
+  pool.query('SELECT * FROM customer LIMIT 100', 
     (error, values) => {
     if (error) {
       throw error
@@ -79,7 +79,7 @@ const getCustomers =  (req, res) => {
 }
 
 const getGenerations =  (req, res) => {
-  pool.query('SELECT * FROM generations', 
+  pool.query('SELECT * FROM generations LIMIT 100', 
     (error, values) => {
     if (error) {
       throw error
@@ -89,7 +89,7 @@ const getGenerations =  (req, res) => {
 }
 
 const getDates =  (req, res) => {
-  pool.query('SELECT * FROM dates', 
+  pool.query('SELECT * FROM dates LIMIT 100', 
     (error, values) => {
     if (error) {
       throw error
