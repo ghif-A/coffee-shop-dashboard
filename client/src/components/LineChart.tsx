@@ -74,6 +74,7 @@ const LineChart: React.FC = () => {
     return {
       title: {
         text: "Daily Spoilage by Product",
+        left: "center",
         textStyle: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
@@ -105,11 +106,20 @@ const LineChart: React.FC = () => {
         },
         name: "Spoilage (item)",
       },
+      grid: {
+        left: '5%',
+        bottom: '10%',
+        containLabel: true
+      },
       series: processDataForEcharts(data),
     };
   };
 
-  return <ReactEcharts option={getOption()} style={{ height: '500px', margin: '30px'  }} />;
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+      <ReactEcharts option={getOption()} style={{ height: '400px', width: '100%', margin: '20px' }}/>
+    </div>
+  );
 };
 
 export default LineChart;

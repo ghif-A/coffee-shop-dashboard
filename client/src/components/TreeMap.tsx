@@ -35,7 +35,7 @@ const TreeMap: React.FC = () => {
     return {
       title: {
         text: "Total Sales by Product Category",
-        left: "left",
+        left: "center",
         textStyle: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
@@ -89,10 +89,9 @@ const TreeMap: React.FC = () => {
   };
 
   return (
-    <ReactEcharts
-      option={getOption()}
-      style={{ height: "400px", margin: "30px" }}
-    />
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+      <ReactEcharts option={getOption()} style={{ height: '400px', width: '100%', margin: '20px' }}/>
+    </div>
   );
 };
 

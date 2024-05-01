@@ -43,6 +43,7 @@ const BarChart: React.FC = () => {
     return {
       title: {
         text: "Daily Sales by Store",
+        left: "center",
         textStyle: {
           color: theme === "dark" ? "#FFFFFF" : "#000000",
         },
@@ -77,11 +78,20 @@ const BarChart: React.FC = () => {
         },
         name: "Sales ($)",
       },
+      grid: {
+        left: '5%',
+        bottom: '10%',
+        containLabel: true
+      },
       series: seriesData,
     };
   };
 
-  return <ReactEcharts option={getOption()} style={{ height: '400px', margin: '30px' }}/>;
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+      <ReactEcharts option={getOption()} style={{ height: '400px', width: '100%', margin: '20px' }}/>
+    </div>
+  );
 };
 
 export default BarChart;

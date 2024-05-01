@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ value, description }) => {
     borderRadius: '5px',
     boxShadow: theme === 'dark' ? '0 4px 8px rgba(255, 255, 255, 0.1)' : '0 4px 8px rgba(0, 0, 0, 0.1)',
     flexBasis: 'calc(50% - 20px)',
-    maxWidth: '300px',
+    maxWidth: '250px',
     boxSizing: 'border-box',
   };
 
